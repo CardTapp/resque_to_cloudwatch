@@ -27,7 +27,7 @@ module ResqueToCloudwatch
       end
       
       # Set up AWS credentials
-      ::AWS.config(
+      ::Aws.config.update(
         :access_key_id => @hash['access_key_id'],
         :secret_access_key => @hash['secret_access_key']
       )
