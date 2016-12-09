@@ -1,9 +1,9 @@
-access_key_id: asdf
-secret_access_key: <%= ENV['USER'] %>
-region: us-west-2
-project: testing
-hostname: andy-laptop
-redis_host: some.redis.host
-redis_port: 6379
+access_key_id: <%= ENV['AWS_CLOUDWATCH_ACCESS_KEY'] %>
+secret_access_key: <%= ENV['AWS_CLOUDWATCH_SECRET_KEY'] %>
+region: us-west-1
+project: <%= ENV['RAILS_ENV'] %>-resque-<%= ENV['SD_ENVIRONMENT_LABEL'] %>
+hostname: <%= ENV['HOSTNAME'] %>
+redis_host: <%= ENV['REDIS_FOR_RESQUE_HOST'] %>
+redis_port: <%= ENV['REDIS_FOR_RESQUE_PORT'] %>
 period: 60
-namespace: F3D
+namespace: <%= ENV['REDIS_FOR_RESQUE_NAMESPACE'] %>
