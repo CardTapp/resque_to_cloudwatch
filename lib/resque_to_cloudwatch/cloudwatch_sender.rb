@@ -13,8 +13,8 @@ module ResqueToCloudwatch
         dimensions = []
         dimensions << {:name => 'project', :value => @config.project}
         dimensions << {:name => 'hostname', :value => @config.hostname} unless @config.hostname.nil?
-        cw = AWS::CloudWatch.new(region: region)
-        cw.client.put_metric_data({
+        cw = ::Aws::CloudWatch::Client.new(region: region)
+        cw.put_metric_data({
           :namespace      => "#{@config.namespace}/resque",
           :metric_data    => [
             :metric_name  => metric_name,
