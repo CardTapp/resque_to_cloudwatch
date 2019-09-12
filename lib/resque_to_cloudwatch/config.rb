@@ -1,6 +1,5 @@
 require 'yaml'
 require 'erb'
-require 'aws-sdk'
 
 module ResqueToCloudwatch
   class Config
