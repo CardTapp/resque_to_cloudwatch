@@ -13,7 +13,7 @@ module ResqueToCloudwatch
       graphite.send_metrics({
         "resque_to_cloudwatch.#{@config.namespace}.#{metric_name}.#{@config.hostname}.#{@config.project}" => value
       })
-      $log.info "GraphiteSender: sent metric value #{value} for #{metric_name}"
+      @config.logger.info "GraphiteSender: sent metric value #{value} for #{metric_name}"
     end
     
     def inspect
